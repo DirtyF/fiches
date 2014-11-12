@@ -1,6 +1,3 @@
-Comment enseigner l'intégration HTML ?
-=========
+# Fiches de Travaux Pratiques
 
-Fiches pédagogiques pour enseigner le HTML, le CSS, le JavaScript (et pourquoi pas plus).
-
-Voir : [http://hteumeuleu.github.io/enseigner/](http://hteumeuleu.github.io/enseigner/)
+Ce répertoire contient un ensemble de fiches pédagogiques destinée à l'enseignement du HTML, du CSS, le JavaScript (et pourquoi pas plus).
