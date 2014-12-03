@@ -1,12 +1,12 @@
 # Fiches de Travaux Pratiques
 
-Ce répertoire contient un ensemble de fiches pédagogiques destinée à l'enseignement du HTML, du CSS, le JavaScript (et pourquoi pas plus).
+Ce répertoire contient un ensemble de fiches pédagogiques destinées à l'enseignement du HTML, du CSS, le JavaScript (et pourquoi pas plus).
 
 [Voir l'ensemble des fiches →](http://traindrop.github.io/fiches/)
 
 ## Contribuer une nouvelle fiche
 
-Pour commencer une nouvelle fiche, vous devez :
+Pour commencer une nouvelle fiche, vous devez passer par GitHub. Si vous êtes novice, une [petite lecture](http://articles.nissone.com/2014/11/gitpourlanulle/ "GitPourLaNulle sur le blog de Nissone") peut vous aider. Voici les étapes à suivre :
 
 * réaliser un *fork* de ce dépôt sur votre compte GitHub ;
 * cloner ce dépôt en local sur votre poste :
