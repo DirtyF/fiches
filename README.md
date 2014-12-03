@@ -9,6 +9,16 @@ Ce répertoire contient un ensemble de fiches pédagogiques destinée à l'ensei
 Pour commencer une nouvelle fiche, vous devez :
 
 * réaliser un *fork* de ce dépôt sur votre compte GitHub ;
+* cloner ce dépôt en local sur votre poste :
+```
+https://github.com/{votre pseudo}/fiches.git
+```
+* Au sein de votre dépôt GitHub local, travailler dans la branche ```master```
+ * Soit via votre gestionnaire graphique
+ * Soit en ligne de commande :
+```CLIPS
+git checkout master
+```
 * au sein du dossier ```_new```, ajoutez votre nouvelle fiche dans un dossier reprenant votre pseudo GitHub (et éventuellement, un numéro). Vous pouvez éventuellement copier/coller le dossier ```pseudoGitHub_001``` pour démarrer rapidement avec une mise-en-page type.
 
 Une fois votre fiche écrite, vous pouvez la contribuer en faisant une *Pull Request*. L'équipe de TrainDrop s'occupera de l'intégrer au bon endroit. N'oubliez pas de bien renseigner le titre de votre fiche et les metadonnées "Principes abordés" et "Niveau requis", c'est ce qui servira aux lecteurs à la retrouver dans l'[index](http://traindrop.github.io/fiches/).
