@@ -54,7 +54,7 @@ a {
 	color: #666;
 }
 
-.assets, .solution {
+.assets, .solution, .proposition {
 	margin-bottom: 1em;
 	padding: 1em;
 	border-left: 4px solid;
@@ -70,6 +70,12 @@ a {
 	color: #8a6d3b;
 	border-left-color: #faebcc;
 	background-color: #fcf8e3;
+}
+
+.proposition {
+	color: #50976E;
+	border-left-color: #B4FBDA;
+	background-color: #CAFCFC;
 }
 
 .solution *:last-child {
