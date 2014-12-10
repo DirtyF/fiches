@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Fiche 002 (à ranger)</title>
+	<link rel="stylesheet" type="text/css" href="../../assets/fiche.css"/>
+	<!-- Code Highlight -->
+	<link rel="stylesheet" href="../../assets/highlight/github.css">
+	<!-- / Code Highlight -->
+</head>
+<body>
+<div class="header">
+	<h1>Construire une grille fluide</h1>
+
+	<p>Principes abordés : <span class="tag">Responsive Web Design</span></p>
+
+	<p>Niveau requis : bases en HML, en CSS</p>
+</div>
+
+<h2>Acte 1</h2>
+
+<p>Nous allons construire ensemble une grille fluide... Un élément de type bloc est aussi large que son parent. Imaginons qu'il est "large à 100%", il sera la base de notre grille.</p>
+<pre><code class="html">&lt;div class=&quot;grille&quot;&gt;
+    &lt;!-- 100% large --&gt;
+&lt;/div&gt;
+</code></pre>
+
+<div class="assets">
+	<blockquote>
+		Mettez en place deux colonnes de contenu. Le contenu principal occupe 2/3 de la largeur disponible, le contenu latéral, 1/3.
+	</blockquote>
+	<pre><code class="html">&lt;div class=&quot;grille&quot;&gt;
+    &lt;div class=&quot;col-2-3&quot;&gt;
+        Contenu principal
+    &lt;/div&gt;
+    &lt;div class=&quot;col-1-3&quot;&gt;
+        Contenu latéral
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div class="solution">
+	<p>Pour faire en sorte d'afficher les deux zones l'une à côté de l'autre, il faut les faire flotter et leur appliquer des largeurs...</p>
+</div>
+<div class="proposition">
+	<p>Proposition de solution :</p>
+		<pre><code class="css">[class*='col-'] {
+	float: left;
+}
+
+.col-2-3 {
+	width: 66.66%;
+}
+
+.col-1-3 {
+    width: 33.33%;
+}
+		</code></pre>
+</div>
+
+<h2>Acte 2</h2>
+
+<p>Nous allons construire ensemble une grille fluide... Un élément de type bloc est aussi large que son parent. Imaginons qu'il est "large à 100%", il sera la base de notre grille.</p>
+<pre><code class="html">&lt;div class=&quot;grille&quot;&gt;
+	&lt;!-- 100% large --&gt;
+	&lt;/div&gt;
+</code></pre>
+
+<div class="assets">
+	<blockquote>
+		À l’aide du code HTML suivant, mettez en place deux colonnes de contenu. Le contenu principal occupe 2/3 de la largeur disponible, le contenu latéral, 1/3.
+	</blockquote>
+	<pre><code class="html">&lt;div class=&quot;grille&quot;&gt;
+	&lt;div class=&quot;col-2-3&quot;&gt;
+		Contenu principal
+	&lt;/div&gt;
+	&lt;div class=&quot;col-1-3&quot;&gt;
+		Contenu latéral
+	&lt;/div&gt;
+&lt;/div&gt;
+	</code></pre>
+</div>
+<div class="solution">
+	<p>Pour faire en sorte d'afficher les deux zones l'une à côté de l'autre, il faut les faire flotter et leur appliquer des largeurs...</p>
+</div>
+<div class="proposition">
+	<p>Proposition de solution :</p>
+		<pre><code class="css">[class*='col-'] {
+	float: left;
+}
+
+.col-2-3 {
+	width: 66.66%;
+}
+
+.col-1-3 {
+	width: 33.33%;
+}
+		</code></pre>
+</div>
+
+<h2>Acte 3</h2>
+
+<p>
+	Le plus difficile dans la mise en place d'une grille fluide, c'est de mettre en place les gouttières. Jusqu'ici nous avons réussi à rendre notre grille flexible, et nous pourrions continuer de même pour les gouttières, avec des calculs mathématiques de pourcentages. Mais la plupart du temps, le rendu est décevant, avec des gouttières qui laissent apparaitre trop d'espaces entre les contenus. Faisons simple, mettons en place des gouttières de taille fixe.</p>
+<p>
+	Pour simplifier la mise en place, nous allons utiliser la règle <code class="html">box-sizing: border-box;</code> afin que la largeur définie d'un contenu soit véritablement sa largeur, indépendamment des <code class="html">padding</code> et des <code class="html">border</code> appliqués.
+</p>
+
+<div class="assets">
+	<blockquote>
+		Mettez en place <code class="html">box-sizing: border-box;</code> pour l'ensemble des éléments, puis définissez des gouttières de 20 pixels.
+	</blockquote>
+</div>
+<div class="solution">
+	<p>Essayez d'imaginer quels impacts pourrait avoir l'absence de <code class="html">box-sizing: border-box;</code>. De plus, que faut-il faire pour que cela fonctionne sur les navigateurs principaux ?</p>
+	<p>Attention, les gouttières ne sont qu'entre les contenus... ni à gauche, ni à droite de l'ensemble.</p>
+</div>
+<div class="proposition">
+	<p>Proposition de solution pour la mise en place de  <code class="html">box-sizing: border-box;</code>:</p>
+		<pre><code class="css">*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+		</code></pre>
+	<p>Puis pour la mise en place des gouttières :</p>
+		<pre><code class="css">[class*='col-'] {
+	padding-right: 20px;
+}
+[class*='col-']:last-of-type {
+padding-right: 0;
+	}
+		</code></pre>
+</div>
+
+<h2>Acte 4</h2>
+
+<div class="assets">
+	<blockquote>
+		Nous voudrions pouvoir nous laisser une option sur les gouttières extérieures, sous la forme d'une classe CSS supplémentaire. Implémentez cette classe <code class="css">.grille-espace</code>.
+	</blockquote>
+	<pre><code class="html">&lt;div class=&quot;grille grille-espace&quot;&gt;
+	&lt;div class=&quot;col-2-3&quot;&gt;
+		Contenu principal
+	&lt;/div&gt;
+	&lt;div class=&quot;col-1-3&quot;&gt;
+		Contenu latéral
+	&lt;/div&gt;
+&lt;/div&gt;
+	</code></pre>
+</div>
+<div class="proposition">
+	<p>Ajoutons d'abord le <code class="css">padding</code> à gauche :</p>
+		<pre><code class="css">.grille-espace {
+	padding-left: 20px;
+}
+		</code></pre>
+	<p>Puis nous restorons éventuellement la gouttière de droite que nous avons supprimé précédemment :</p>
+		<pre><code class="css">.grille-espace > [class*='col-']:last-of-type {
+	padding-right: 20px;
+}
+		</code></pre>
+</div>
+
+<h2>Acte 5</h2>
+<p>
+	Notre grille est bien partie, mais il faut désormais ajouter d'autres types de largeurs d'éléments pour rendre notre mise-en-page flexible aux besoins.
+</p>
+<div class="assets">
+	<blockquote>
+		Ajoutez des classes pour mettre en forme des contenu occupant 1/2, 1/4 ou 1/6 de la largeur disponible.
+	</blockquote>
+</div>
+<div class="proposition">
+	<p>Proposition de solution :</p>
+		<pre><code class="css">.col-1-2 {
+	width: 50%;
+}
+.col-1-4 {
+	width: 25%;
+}
+.col-1-6 {
+	width: 16,66%;
+}
+		</code></pre>
+</div>
+
+<h2>Acte 6</h2>
+<p>
+	Notre grille est prête, mais résistera-t-elle au temps ? Pas si sûr...
+</p>
+<div class="assets">
+	<blockquote>
+		Que se passerait-il demain si nous voulions modifier la largeur de nos gouttières ? Proposez une solution pour rendre la maintenance plus simple. Quels impacts sur le processus de développement ?
+	</blockquote>
+</div>
+<div class="solution">
+	<p>
+		Il existe, dans le monde du développement CSS, la notion de pré ou de post-processeurs. Peuvent-ils aider ? Comment ? Est-ce lourd à mettre en place ?
+	</p>
+</div>
+<div class="proposition">
+	<p>Proposition de solution en SCSS :</p>
+		<pre><code class="scss">/* Application de border-box */
+* {
+	@include box-sizing(border-box);
+}
+
+/* On définit les gouttières dans un paramètre facilement modifiable */
+$gouttiere: 20px;
+
+.grille {
+	background: white;
+	margin: 0 0 $gouttiere 0;
+
+	/* Ici quelques règles pour gérer le contenu situé après la grille */
+	&:after {
+		/* Ou @extend clearfix */
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	[class*='col-'] {
+		float: left;
+		padding-right: $gouttiere;
+
+		.grille &:last-of-type {
+			padding-right: 0;
+		}
+	}
+
+	.col-2-3 {
+		width: 66.66%;
+	}
+	.col-1-3 {
+		width: 33.33%;
+	}
+	.col-1-2 {
+		width: 50%;
+	}
+	.col-1-4 {
+		width: 25%;
+	}
+	.col-1-6 {
+		width: 16.66%;
+	}
+
+	/* Option pour gouttières extérieures */
+	.grille-espace {
+		padding-left: $gouttiere;
+
+		[class*='col-']:last-of-type {
+			padding-right: $gouttiere;
+		}
+	}
+}
+		</code></pre>
+</div>
+
+<h1>Ressources</h1>
+<ol>
+	<li id="cite-ressource1"><a href="#cite-note-ressource1">^</a> <a
+			href="https://developer.mozilla.org/fr/docs/Web/CSS/:before">:before</a>, sur <a
+			href="https://developer.mozilla.org/fr/">MDN</a></li>
+	<li id="cite-ressource2"><a href="#cite-note-ressource2">^</a> <a
+			href="http://iamvdo.me/blog/comprendre-z-index-et-les-contextes-dempilement">Comprendre z-index et les
+		contextes d'empilement</a>, par <a href="http://iamvdo.me/">Vincent de Oliveira</a></li>
+</ol>
+
+<!-- End of page scripts -->
+<script src="../../assets/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- / End of page scripts -->
+</body>
+</html>
