@@ -73,6 +73,7 @@ a {
 }
 
 .proposition {
+	display: none;
 	color: #50976E;
 	border-left-color: #B4FBDA;
 	background-color: #CAFCFC;

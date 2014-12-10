@@ -11,6 +11,7 @@
 <body>
 <div class="header">
 	<h1>Construire une grille fluide</h1>
+	<p><small><a href="#" id="togglePropositionsDisplay">Afficher/Masquer les propositions de solutions</a></small></p>
 
 	<p>Principes abordés : <span class="tag">Responsive Web Design</span></p>
 
@@ -63,7 +64,7 @@
 <p>
 	Le plus difficile dans la mise en place d'une grille fluide, c'est de mettre en place les gouttières. Jusqu'ici nous avons réussi à rendre notre grille flexible, et nous pourrions continuer de même pour les gouttières, avec des calculs mathématiques de pourcentages. Mais la plupart du temps, le rendu est décevant, avec des gouttières qui laissent apparaitre trop d'espaces entre les contenus. Faisons simple, mettons en place des gouttières de taille fixe.</p>
 <p>
-	Pour simplifier la mise en place, nous allons utiliser la règle <code class="html">box-sizing: border-box;</code><sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup> afin que la largeur définie d'un contenu soit véritablement sa largeur, indépendamment des <code class="html">padding</code> et des <code class="html">border</code> appliqués.
+	Pour simplifier la mise en place, nous allons utiliser la règle <code class="html">box-sizing: border-box;</code> <sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup> afin que la largeur définie d'un contenu soit véritablement sa largeur, indépendamment des <code class="html">padding</code> et des <code class="html">border</code> appliqués.
 </p>
 
 <div class="assets">
@@ -224,6 +225,7 @@ $gouttiere: 20px;
 </ol>
 
 <!-- End of page scripts -->
+<script src="../../assets/fiche.js"></script>
 <script src="../../assets/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <!-- / End of page scripts -->
