@@ -3,17 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Fiche #001</title>
-	<link rel="stylesheet" type="text/css" href="../../assets/fiche.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor/tinytypo.css"/>
+	<link rel="stylesheet" type="text/css" href="../../assets/css/fiche.css"/>
 	<!-- Code Highlight -->
-	<link rel="stylesheet" href="../../assets/highlight/github.css">
+	<link rel="stylesheet" href="../../assets/vendor/highlight/github.css">
 	<!-- / Code Highlight -->
 </head>
 <body>
 	<div class="header">
 		<h1>Créer un lien sur tout un bloc HTML.</h1>
 		<p><small><a href="#" id="togglePropositionsDisplay">Afficher/Masquer les propositions de solutions</a></small></p>
-		<p>Principes abordés : <span class="tag">Accessibilité</span>, <span class="tag">Interopérabilité</span>, <span class="tag">Référencement</span></p>
-		<p>Niveau requis : base en HTML, CSS</p>
+		<p>Principes abordés&nbsp;: <span class="tag">Accessibilité</span>, <span class="tag">Interopérabilité</span>, <span class="tag">Référencement</span></p>
+		<p>Niveau requis&nbsp;: base en HTML, CSS</p>
 	</div>
 
 	<h2>Acte 1</h2>
@@ -23,7 +24,7 @@
 		<img src="assets/maquette.jpg" alt="" width="369" height="392" />
 	</div>
 	<div class="solution">
-		<p>Comment faire un lien sur tout un bloc ?</p>
+		<p>Comment faire un lien sur tout un bloc&nbsp;?</p>
 	</div>
 
 	<h2>Acte 2</h2>
@@ -35,7 +36,7 @@
 &lt;/div&gt;
 	</code></pre>
 	<div class="solution">
-		<p>Quelles solutions pourrait-on envisager ? Essayez d'exploiter plusieurs pistes : HTML, CSS, JS&#8230;</p>
+		<p>Quelles solutions pourrait-on envisager&nbsp;? Essayez d'exploiter plusieurs pistes&nbsp;: HTML, CSS, JS&#8230;</p>
 	</div>
 	<div class="proposition">
 		<p><strong>En JavaScript</strong>, on peut ajouter un événement au clic de chaque <code class="css">.post</code>.</p>
@@ -53,7 +54,7 @@
 		});
 	}
 });</code></pre>
-		<p><strong>Avec jQuery</strong>, on peut écrire ça plus simplement :</p>
+		<p><strong>Avec jQuery</strong>, on peut écrire ça plus simplement&nbsp;:</p>
 		<pre><code class="js">$(document).ready(function() {
 	$('.post').click(function(e) {
 		var url = $(this).find('.post-link').eq(0).attr('href');
@@ -88,7 +89,7 @@
 	</div>
 
 	<h2>Acte 3</h2>
-	<p class="note">Votre venez de recevoir une nouvelle précision de la part de votre chef de projet :</p>
+	<p class="note">Votre venez de recevoir une nouvelle précision de la part de votre chef de projet&nbsp;:</p>
 	<div class="assets">
 		<blockquote>Au fait, il faudrait que le nom de l’auteur soit lui-aussi cliquable et ramène vers la page de l’auteur (<code>http://www.theverge.com/users/piercedavid</code>).</blockquote>
 	</div>
@@ -109,8 +110,8 @@
 	</ol>
 
 	<!-- End of page scripts -->
-	<script src="../../assets/fiche.js"></script>
-	<script src="../../assets/highlight/highlight.pack.js"></script>
+	<script src="../../assets/js/fiche.js"></script>
+	<script src="../../assets/vendor/highlight/highlight.pack.js"></script>
 	<script>if(hljs){
 		hljs.initHighlightingOnLoad();
 	}</script>
