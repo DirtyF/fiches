@@ -1,45 +1,75 @@
-/* A commenter si vous utilisez Bourbon plutôt que Compass */
 @import "compass/css3";
 
-/* Application de border-box */
-* {
-  @include box-sizing(border-box);
+/* Gestion du modèle de boite */
+/* Bonnes pratiques : http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* On définit les gouttières dans un paramètre facilement modifiable */
-$gouttiere: 20px;
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Règles pour la mise en forme */
+body {
+    background-color: #446CB3;
+    color: #FFF;
+
+    .grille {
+        border: 2px dashed rgb(255, 255, 255);
+        border: 2px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    [class*='col-'] p {
+        background: rgba(225, 255, 255, 0.1);
+        border: 2px solid rgb(255, 255, 255);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        display: block;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
 
 .grille {
-  background: white;
-  margin: 0 0 $gouttiere 0;
+    [class*='col-'] {
+        float: left;
 
-  /* Ici quelques règles pour gérer le contenu situé après la grille */
-  &:after {
-    /* Ou @extend clearfix */
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  [class*='col-'] {
-    float: left;
-    padding-right: $gouttiere;
-
-    .grille &:last-of-type {
-      padding-right: 0;
+        &.oppose {
+            float: right;
+        }
     }
-  }
 
-  @for $i from 1 through 11 {
-	.col-#{$i}-12 { width: (100% / 12) * $i; }
-  }
+    /* Sur 12 colonnes */
+    @for $i from 1 through 11 {
+        .col-#{$i}-12 {
+            width: (100% / 12) * $i;
+        }
+    }
 
-  /* Option pour gouttières extérieures */
-  .grille-espace {
-    padding-left: $gouttiere;
+    /* Sur 3 colonnes */
+    @for $i from 1 through 2 {
+        .col-#{$i}-3 {
+            width: (100% / 3) * $i;
+        }
+    }
 
+    [class*='col-'] {
+        padding-right: 20px;
+    }
     [class*='col-']:last-of-type {
-      padding-right: $gouttiere;
+        padding-right: 0;
     }
-  }
+
+    .ligne {
+        &:before,
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+    }
 }
