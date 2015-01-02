@@ -12,6 +12,9 @@ html {
     box-sizing: inherit;
 }
 
+/* Taille des gouttières */
+$gouttiere: 20px;
+
 /* Règles pour la mise en forme */
 body {
     background-color: #446CB3;
@@ -58,7 +61,7 @@ body {
     }
 
     [class*='col-'] {
-        padding-right: 20px;
+        padding-right: $gouttiere;
     }
     [class*='col-']:last-of-type {
         padding-right: 0;
@@ -70,6 +73,15 @@ body {
             content: " ";
             display: block;
             clear: both;
+        }
+    }
+
+    /* Espaces extérieur */
+    &.grille-espace {
+        padding-left: $gouttiere;
+
+        [class*='col-']:last-of-type {
+            padding-right: $gouttiere;
         }
     }
 }
