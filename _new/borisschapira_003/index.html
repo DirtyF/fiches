@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Fiche 002</title>
+    <title>Fiche 002 : Construire une grille fluide avec flexbox</title>
     <link rel="stylesheet" type="text/css" href="../../assets/vendor/tinytypo.css"/>
     <link rel="stylesheet" type="text/css" href="../../assets/css/fiche.css"/>
     <!-- Code Highlight -->
@@ -10,19 +10,26 @@
     <!-- / Code Highlight -->
 </head>
 <body>
-<div class="header">
-    <h1>Construire une grille fluide avec <code>float</code></h1>
-    <p><small><a href="#" id="togglePropositionsDisplay">Afficher/Masquer les propositions de solutions</a></small></p>
+<header class="fix">
+    <div class="container">
+        <a href="#" title="Retour à l'index des fiches"><img src="http://traindrop.github.io/assets/traindrop-logoCourt-80.png" alt="Logo TrainDrop"></a>
+        <h1><span>002</span> Construire une grille fluide avec <code>flexbox</code></h1>
+        <label for="togglePropositionsDisplay">
+            <input type="checkbox" id="togglePropositionsDisplay" name="togglePropositionsDisplay" value="1">
+            Afficher les propositions de solutions
+        </label>
+        <!---->
+        <!--<p>Principes abordés&nbsp;: <span class="tag">Responsive Web Design</span></p>-->
 
-    <p>Principes abordés&nbsp;: <span class="tag">Responsive Web Design</span></p>
-
-    <p>Niveau requis&nbsp;: bases en HML, en CSS</p>
-</div>
-
+        <!--<p>Niveau requis&nbsp;: bases en HML, en CSS</p>-->
+    </div>
+</header>
+<main>
 <h2>Acte 1</h2>
 
 <p>Nous allons construire ensemble une grille fluide, c'est-à-dire une CSS définissant une collection de classes qui nous permettront d'organiser, au sein d'un certain bloc, le contenu en colonnes et en gouttières. L'idée est de pouvoir très simplement définir que tel contenu occupe ½, ⅓, ⅙&#8230; de la largeur disponible, quelle que soit la largeur du <code>viewport</code>.</p>
 <p>Notre grille n'occupera pas nécessairement tout l'espace, mais peut-être qu'une partie du site. Nous allons donc l'embarquer dans un élément de type bloc, un <em>container</em>, dont nous considérerons qu'il est "large à 100%", il sera la base de notre grille. Notez que si cet élément est le seul élément du <code>body</code>, alors tout se passera comme si la grille occupait toute la largeur disponible car, par défaut, cet élément de type bloc occupera véritablement toute la largeur.</p>
+<p>Notre dernière contrainte sera d'utiliser le <strong>module Flexbox</strong>, introduit par CSS3 et <time itemprop="startDate" datetime="2015-01-01T10:50+02:00">aujourd'hui</time> compatible avec une majorité de navigateurs.</p>
 <p>Nous allons partir du code HTML suivant&nbsp;:</p>
 <pre><code class="html">&lt;div class=&quot;grille&quot;&gt;
     &lt;!-- 100% large --&gt;
@@ -43,23 +50,24 @@
 &lt;/div&gt;</code></pre>
 </div>
 <div class="solution">
-    <p>Pour faire en sorte d'afficher les deux zones l'une à côté de l'autre, il faut les faire flotter et leur appliquer des largeurs&#8230;</p>
-    <p>Essayer de distinguer ce qui s'applique véritablement à un élément affichant une certaine classe (par exemple, <code class="css">.col-1-3</code>) de ce qui s'appliquera à l'ensemble des classes de type <code class="css">.col-{quelque chose}</code>. Comment adresser l'ensemble de ces classes avec une seule règle CSS&nbsp;?</p>
+    <p>Pour faire en sorte d'afficher les deux zones l'une à côté de l'autre, il faut commencer par définir le <em>container</em> comme un objet <code class="css">flexbox</code> puis configurer ses options <code class="css">flex-direction</code> et <code class="css">flex-wrap</code>.</p>
+    <p>Il faut ensuite définir la largeur des colonnes&8230; Vous utiliserez pour cela la syntaxe <code class="css">flex</code> <sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup> à une valeur.</p>
 </div>
 <div class="proposition">
     <p>Proposition de solution&nbsp;:</p>
-        <pre><code class="css">[class*='col-'] {
-    float: left;
+        <pre><code class="css">.grille {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .col-2-3 {
-    width: 66.66%;
+  flex: 2;
 }
 
 .col-1-3 {
-    width: 33.33%;
-}
-        </code></pre>
+  flex: 1;
+}</code></pre>
 </div>
 
 <h2>Acte 2</h2>
@@ -256,7 +264,7 @@
 </div>
 <div class="proposition">
     <p>Les pré et post processeur CSS permettent de réaliser des opérations amenant à du CSS (à partir d'un autre langage) ou étendant le CSS après son écriture. Leur utilisation n'est ni bonne, ni mauvaise&nbsp;: elle dépend du contexte. En revanche, elle implique de travailler au sein d'une équipe parfaitement consciente des usages et qui maitrise ces outils. La courbe d'apprentissage, pour un nouvel arrivant, sera plus importante que s'il n'y avait pas ces outils&nbsp;: il faut donc s'assurer qu'en contre-partie, le temps gagné à l'usage est supérieur.</p>
-    <p>Proposition de solution en SCSS (<a href="example/" target="_blank">voir la démo</a>)&nbsp;:</p>
+    <p>Proposition de solution en SCSS &nbsp;:</p>
         <pre><code class="css">/* Gestion du modèle de boite */
 /* Bonnes pratiques : http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html {
@@ -338,7 +346,6 @@ body{
     <blockquote>
         Voici un schéma présentant les contenus de notre site.
     </blockquote>
-    <img src="assets/content_grid.png" width="975" height="1270" alt="Exemple de mise en page sur grille à 12 colonnes" />
 </div>
 <div class="solution">
     <p>
@@ -348,14 +355,13 @@ body{
         Utilisez une grille fluide pour mettre en forme votre mise-en-page corrigée.
     </p>
 </div>
-
+</main>
+<footer>
 <h1>Ressources</h1>
 <ol>
-    <li id="cite-ressource1"><a href="#cite-note-ressource1">^</a> Il existe de nombreux générateurs de faux texte en ligne, plus ou moins proches du Lorem Ipsum. Par exemple&nbsp;: <a href="http://loripsum.net/">LORIPSUM.NET</a></li>
-    <li id="cite-ressource2"><a href="#cite-note-ressource2">^</a> <a href="https://developer.mozilla.org/fr/docs/Web/CSS/box-sizing">box-sizing</a>, sur <a href="https://developer.mozilla.org/fr/">MDN</a></li>
-    <li id="cite-ressource3"><a href="#cite-note-ressource3">^</a> Sur la base de la bonne pratique recommandée par <a href="http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">Chris Coyier</a></li>
+    <li id="cite-ressource1"><a href="#cite-note-ressource1">^</a> <a href="https://developer.mozilla.org/fr/docs/Web/CSS/flex">flex</a>, sur <a href="https://developer.mozilla.org/fr/">MDN</a></li>
 </ol>
-
+</footer>
 <!-- End of page scripts -->
 <script src="../../assets/js/fiche.js"></script>
 <script src="../../assets/vendor/highlight/highlight.pack.js"></script>
