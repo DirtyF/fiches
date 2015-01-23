@@ -76,7 +76,13 @@
 	</div>
 	<div class="proposition">
 		<p><strong>En CSS</strong>, on peut utiliser un pseudo-élément <sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup> sur la balise <code class="html">&lt;a&gt;</code>, positionné ensuite pour recouvrir tout le <code class="css">.post</code>.</p>
-		<pre><code class="css">.post-link:before {
+		<pre><code class="css">.post {
+	/* définit le contexte du
+	positionnement absolu des
+	éléments enfants */
+	position: relative;
+}
+.post-link:before {
 	content:'';
 	position:absolute;
 	left:0;
