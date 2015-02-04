@@ -9,5 +9,9 @@ function togglePropositionsDisplay(e) {
 document.addEventListener('DOMContentLoaded', function(){
 	var toggleLink = document.getElementById("togglePropositionsDisplay");
 	toggleLink.addEventListener('click', togglePropositionsDisplay);
+
+	if(location.search.split('show')[0]){
+		togglePropositionsDisplay();
+	}
 });
 
