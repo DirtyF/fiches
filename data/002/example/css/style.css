@@ -21,6 +21,7 @@ body .grille {
   border: 2px dashed white;
   border: 2px dashed rgba(255, 255, 255, 0.3);
 }
+body [class*='col-'] figure,
 body [class*='col-'] p {
   background: rgba(225, 255, 255, 0.1);
   border: 2px solid white;
