@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>Fiche XXX (à ranger)</title>
+	<title>[Fiche XXX] (à ranger)</title>
 	<link rel="stylesheet" type="text/css" href="../../assets/vendor/tinytypo.css"/>
 	<link rel="stylesheet" type="text/css" href="../../assets/css/fiche.css"/>
 	<!-- Code Highlight -->
@@ -11,91 +11,97 @@
 </head>
 <body>
 <div class="header">
-	<h1>Titre de la fiche.</h1>
+
+<!-- Aide --
+---- Des commentaires encadrés comme celui-ci par le mot "Aide" sont là pour vous aider à suivre la méthodo retenue par TrainDrop.
+---- Les portions de texte entre crochets sont également des aides et sont à remplacer par votre contenu.
+---- Vous pouvez vous inspirer de la fiche #001 : http://traindrop.github.io/fiches/data/001/
+/Aide -->
+
+	<h1>[Titre de la fiche]</h1>
 	<p><small><a href="#" id="togglePropositionsDisplay">Afficher/Masquer les propositions de solutions</a></small></p>
 
-	<p>Principes abordés : <span class="tag">Poneys</span>, <span class="tag">Licornes</span>, <span
-			class="tag">Chatons</span></p>
-
-	<p>Niveau requis : bases (all of them are belong to us)</p>
+	<p>Principes abordés&nbsp;: [<span class="tag">Poneys</span>, <span class="tag">Licornes</span>, <span class="tag">Chatons</span>]</p>
+	<!-- Aide --
+	---- Exemples : Accessibilité, Interopérabilité, Maintenabilité, Référencement, Standards du web, Sémantique, Performance, Expérience utilisateur.
+	---- Rappel : TrainDrop vise à transmettre avant-tout les grands principes du web au travers de enseignement technique.
+	---- cf : http://traindrop.github.io/#les-grands-principes 
+	/Aide -->
+	<p>Niveau requis&nbsp;: [bases (all of them are belong to us)]</p>
 </div>
 
-<h2>Acte 1</h2>
-
-<p>Contexte <sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup></p>
+<h2>Acte 1&nbsp;: Besoin</h2>
+	
+<p>[Contexte dans lequel la demande arrive] <sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup></p>
+<!-- Aide --
+---- Décrire la problématique à traiter. Il s'agit d'une demande "client".
+---- Rappel : Les fiches TrainDrop sont basées sur des simulations de cas réels pour entrer par le besoin et non la technique. 
+/Aide -->
 
 <div class="assets">
-	<blockquote>Consigne.</blockquote>
+	<blockquote>[Le mail, la demande du client, l'extrait de la spécification, etc.]</blockquote>
 		<pre><code>function() {
-	console.log("Eventuellement, du code");
+	console.log("Éventuellement, du code");
 }</code></pre>
 	<img src="assets/kitty.jpg" alt="" width="408" height="287"/>
 </div>
+<div class="assets">
+	<p>[Réflexions et questions soulevées par la demande client.]</p>
+</div>
 <div class="solution">
-	<p>Eléments de réflexion pour une ou des solutions (pistes).</p>
+	<p>[Éventuellement, éléments de réflexion pour une ou des solutions (pistes).]</p>
 		<pre><code>function() {
-	console.log("Eventuellement, du code");
-}</code></pre>
-</div>
-<div class="proposition">
-	<p>Proposition de solution</p>
-		<pre><code>function() {
-	console.log("Eventuellement, du code");
+	console.log("Éventuellement, du code");
 }</code></pre>
 </div>
 
-<h2>Acte 2</h2>
-
-<p>Evolution du besoin</p>
+<h2>Acte 2 : TP</h2>
 
 <div class="assets">
-	<blockquote>Consigne.</blockquote>
+<!-- Aide --
+---- Donner les éléments nécessaires à la réalisation de l'exercice : portions de code HTML, contexte, indices…
+/Aide -->
+	<p>[La consigne elle-même, ce que les étudiants doivent essayer de faire.]</p>
+	<p>Vous comparerez les avantages et inconvénients des solutions trouvées.</p>
+	<!-- Aide --
+	---- Rappel : Le but de TrainDrop est aussi de montrer qu'il n'y a pas qu'une bonne solution mais plusieurs solutions à choisir en fonction du contexte
+	/Aide -->
 		<pre><code>function() {
-	console.log("Eventuellement, du code");
+	console.log("Éventuellement, du code");
 }</code></pre>
-	<img src="assets/kitty.jpg" alt="" width="408" height="287"/>
 </div>
+
 <div class="solution">
-	<p>Eléments de réflexion pour une ou des solutions (pistes).</p>
+	<p>[Éventuellement, éléments de réflexion pour une ou des solutions (pistes).]</p>
 		<pre><code>function() {
-	console.log("Eventuellement, du code");
-}</code></pre>
-</div>
-<div class="proposition">
-	<p>Proposition de solution</p>
-		<pre><code>function() {
-	console.log("Eventuellement, du code");
+	console.log("Éventuellement, du code");
 }</code></pre>
 </div>
 
-<h2>Acte 3</h2>
-
-<p>Un troisième acte pour une nouvelle évolution du besoin (ajoutez autant d'Actes que vous le souhaitez)</p>
+<h2>Acte 3 : Évolution du besoin</h2>
+<!-- Aide --
+---- Parce que dans la vraie vie, il y a toujours des changements, chaque fiche TrainDrop prévoit un changement dans la demande client, une contrainte en plus, etc.
+---- Exemple : "Ca doit être accessible, niveau AA" ou "Grosse contrainte de performance, il faut optimiser le code au maximum", etc.
+---- NB : Cette évolution permet d'introduire notamment un grand principe du web mais aussi une technique, une nouvelle notion, etc.
+/Aide -->
+<p>[Un troisième acte pour une nouvelle évolution du besoin (ajoutez autant d'Actes que vous le souhaitez)]</p>
 
 <div class="assets">
-	<blockquote>Consigne.</blockquote>
+	<blockquote>[Nouvelle demande, contrainte]</blockquote>
 		<pre><code>function() {
 	console.log("Eventuellement, du code");
 }</code></pre>
-	<img src="assets/kitty.jpg" alt="" width="408" height="287"/>
+	<img src="assets/lion.jpg" alt="" width="408" height="270"/>
+	<!-- Crédit photo : http://photozou.jp/photo/show/1934405/181091550 -->
 </div>
-<div class="solution">
-	<p>Eléments de réflexion pour une ou des solutions (pistes).</p>
-		<pre><code>function() {
-	console.log("Eventuellement, du code");
-}</code></pre>
-</div>
-<div class="proposition">
-	<p>Proposition de solution</p>
-		<pre><code>function() {
-	console.log("Eventuellement, du code");
-}</code></pre>
-</div>
+
 
 <h1>Ressources</h1>
 <ol>
-	<li id="cite-ressource1"><a href="#">^</a> un note de pas de page</li>
+	<li id="cite-ressource1"><a href="#">^</a> Une note de bas de page</li>
 </ol>
+
+<p><small>Cette fiche a été réalisée à l'aide du projet <a href="http://traindrop.github.io/">TrainDrop</a>.</small></p>
 
 <!-- End of page scripts -->
 <script src="../../assets/js/fiche.js"></script>
